@@ -1,0 +1,113 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject\\areas\\support\\controllers\\requestresponseviewercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|solutionrelative:initialproject\\areas\\support\\controllers\\requestresponseviewercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject\\controllers\\api\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|solutionrelative:initialproject\\controllers\\api\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E85FA7C-F5FB-4B4F-9632-037C40157734}|InitialProject.BusinessLayer\\Ecommerce.BusinessLayer.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject.businesslayer\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E85FA7C-F5FB-4B4F-9632-037C40157734}|InitialProject.BusinessLayer\\Ecommerce.BusinessLayer.csproj|solutionrelative:initialproject.businesslayer\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 122,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{a2c8b774-0984-495f-8428-e6140b2d66e0}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RequestResponseViewerController.cs",
+              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Support\\Controllers\\RequestResponseViewerController.cs",
+              "RelativeDocumentMoniker": "InitialProject\\Areas\\Support\\Controllers\\RequestResponseViewerController.cs",
+              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Support\\Controllers\\RequestResponseViewerController.cs",
+              "RelativeToolTip": "InitialProject\\Areas\\Support\\Controllers\\RequestResponseViewerController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T22:36:16.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Controllers\\API\\BaseController.cs",
+              "RelativeDocumentMoniker": "InitialProject\\Controllers\\API\\BaseController.cs",
+              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Controllers\\API\\BaseController.cs",
+              "RelativeToolTip": "InitialProject\\Controllers\\API\\BaseController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T22:36:01.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject.BusinessLayer\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "InitialProject.BusinessLayer\\Services\\AccountService.cs",
+              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject.BusinessLayer\\Services\\AccountService.cs",
+              "RelativeToolTip": "InitialProject.BusinessLayer\\Services\\AccountService.cs",
+              "ViewState": "AQIAAAoCAAAAAAAAAAAAABoCAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T22:33:27.784Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
