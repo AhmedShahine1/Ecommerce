@@ -1,10 +1,10 @@
-﻿using Ecommerce.Core.DTO.EntityDTO;
-using Ecommerce.BusinessLayer.Interfaces;
+﻿using Ecommerce.BusinessLayer.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ecommerce.Core.DTO.AuthViewModel.RequesrLog;
 
 namespace Ecommerce.BusinessLayer.Services
 {

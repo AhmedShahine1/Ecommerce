@@ -1,6 +1,7 @@
 ﻿using Ecommerce.BusinessLayer.Interfaces;
 using Ecommerce.BusinessLayer.Services;
 using Ecommerce.Core;
+using Ecommerce.Core.DTO;
 using Ecommerce.RepositoryLayer.Interfaces;
 using Ecommerce.RepositoryLayer.Repositories;
 using Microsoft.EntityFrameworkCore;

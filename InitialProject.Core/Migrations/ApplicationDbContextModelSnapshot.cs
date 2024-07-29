@@ -179,7 +179,7 @@ namespace Ecommerce.Core.Migrations
 
                     b.HasIndex("pathId");
 
-                    b.ToTable("Images");
+                    b.ToTable("Images", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerce.Core.Entity.Files.Paths", b =>
@@ -197,7 +197,7 @@ namespace Ecommerce.Core.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Paths");
+                    b.ToTable("Paths", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerce.Core.Entity.Others.City", b =>
@@ -245,7 +245,7 @@ namespace Ecommerce.Core.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cities");
+                    b.ToTable("Cities", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

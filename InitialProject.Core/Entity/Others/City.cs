@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 
 namespace Ecommerce.Core.Entity.Others
 {
+    [DebuggerDisplay("NameEn")]
     public class City : BaseEntity
     {
         [StringLength(50)]

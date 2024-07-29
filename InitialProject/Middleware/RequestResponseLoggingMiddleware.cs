@@ -1,5 +1,5 @@
 ﻿using Ecommerce.BusinessLayer.Interfaces;
-using Ecommerce.Core.DTO.EntityDTO;
+using Ecommerce.Core.DTO.AuthViewModel.RequesrLog;
 
 public class RequestResponseLoggingMiddleware
 {

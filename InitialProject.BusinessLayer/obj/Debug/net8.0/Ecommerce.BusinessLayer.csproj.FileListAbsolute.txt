@@ -1,9 +1,3 @@
-C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\obj\Debug\net8.0\Ecommerce.BusinessLayer.csproj.AssemblyReference.cache
-C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\obj\Debug\net8.0\Ecommerce.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\obj\Debug\net8.0\Ecommerce.BusinessLayer.AssemblyInfoInputs.cache
-C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\obj\Debug\net8.0\Ecommerce.BusinessLayer.AssemblyInfo.cs
-C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\obj\Debug\net8.0\Ecommerce.BusinessLayer.csproj.CoreCompileInputs.cache
-C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\obj\Debug\net8.0\Ecommerce.BusinessLayer.sourcelink.json
 C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\bin\Debug\net8.0\Ecommerce.BusinessLayer.deps.json
 C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\bin\Debug\net8.0\Ecommerce.BusinessLayer.dll
 C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\bin\Debug\net8.0\Ecommerce.BusinessLayer.pdb
@@ -306,6 +300,12 @@ C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\bin\Deb
 C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\bin\Debug\net8.0\Ecommerce.RepositoryLayer.dll
 C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\bin\Debug\net8.0\Ecommerce.Core.pdb
 C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\bin\Debug\net8.0\Ecommerce.RepositoryLayer.pdb
+C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\obj\Debug\net8.0\Ecommerce.BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\obj\Debug\net8.0\Ecommerce.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\obj\Debug\net8.0\Ecommerce.BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\obj\Debug\net8.0\Ecommerce.BusinessLayer.AssemblyInfo.cs
+C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\obj\Debug\net8.0\Ecommerce.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\obj\Debug\net8.0\Ecommerce.BusinessLayer.sourcelink.json
 C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\obj\Debug\net8.0\Ecommerc.93D5F7D7.Up2Date
 C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\obj\Debug\net8.0\Ecommerce.BusinessLayer.dll
 C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject.BusinessLayer\obj\Debug\net8.0\refint\Ecommerce.BusinessLayer.dll

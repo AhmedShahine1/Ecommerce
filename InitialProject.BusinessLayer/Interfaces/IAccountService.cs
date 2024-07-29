@@ -1,4 +1,6 @@
-﻿namespace Ecommerce.BusinessLayer.Interfaces;
+﻿using Ecommerce.Core.DTO.AuthViewModel.RoleModel;
+
+namespace Ecommerce.BusinessLayer.Interfaces;
 
 public interface IAccountService
 {
@@ -15,11 +17,11 @@ public interface IAccountService
     //Task<AuthModel> ChangeOldPasswordAsync(string userId, ChangeOldPassword changePassword);
     //Task<AuthModel> UpdateUserProfile(string userId, UpdateUserMv updateUser);
     //Task<AuthModel> GetUserInfo(string userId);
-    //Task<string> AddRoleAsync(AddRoleModel model);
-    //Task<List<string>> GetRoles();
+    Task<string> AddRoleAsync(AddRoleUserModel model);
+    Task<List<string>> GetRoles();
 
-    //string ValidateJwtToken(string token);
-    //int GenerateRandomNo();
+    string ValidateJwtToken(string token);
+    int GenerateRandomNo();
     ////------------------------------------------------------
     //Task Activate(string userId);
     //Task Suspend(string userId);

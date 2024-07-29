@@ -25,7 +25,8 @@ builder.Services.AddCors(options =>
 });
 // context && json services && IBaseRepository && IUnitOfWork Service
 builder.Services.AddContextServices(builder.Configuration);
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddRazorRuntimeCompilation();
 
 // Services [IAccountService, IPhotoHandling, AddAutoMapper, Hangfire ,
 // Session , SignalR ,[ INotificationService, FcmNotificationSetting, FcmSender,ApnSender ]  ]
@@ -51,16 +52,17 @@ else
 }
 app.UseSwaggerDocumentation();
 app.UseCors("CORSPolicy");
-app.UseRouting();
-app.UseStaticFiles();
 app.UseHttpsRedirection();
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthorization();
 app.UseCors();
 
 app.UseAuthentication();
 app.UseApplicationMiddleware();
-app.UseHttpsRedirection();
 
-app.UseAuthorization();
 app.UseMiddleware<RequestResponseLoggingMiddleware>();
 
 app.UseEndpoints(endpoints =>
@@ -68,5 +70,5 @@ app.UseEndpoints(endpoints =>
     endpoints.MapControllerRoute(
         name: "default",
         pattern: "{Area=Support}/{controller=Home}/{action=Index}/{id?}");
-});
+}); 
 app.Run();

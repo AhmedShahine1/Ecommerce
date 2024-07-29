@@ -1,5 +1,8 @@
-﻿namespace Ecommerce.Core.Entity.Files
+﻿using System.Diagnostics;
+
+namespace Ecommerce.Core.Entity.Files
 {
+    [DebuggerDisplay("Name")]
     public class Paths
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();

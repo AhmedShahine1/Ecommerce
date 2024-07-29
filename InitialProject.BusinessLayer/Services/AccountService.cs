@@ -1,8 +1,10 @@
 ﻿using Ecommerce.BusinessLayer.Interfaces;
+using Ecommerce.Core.DTO.AuthViewModel.RoleModel;
 using Ecommerce.Core.Entity.ApplicationData;
 using Ecommerce.Core.Helpers;
 using Ecommerce.RepositoryLayer.Interfaces;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -484,57 +486,60 @@ public class AccountService : IAccountService
     //    return result;
     //}
 
-    ////------------------------------------------------------------------------------------------------------------
-    //public async Task<string> AddRoleAsync(AddRoleModel model)
-    //{
-    //    var user = await _userManager.FindByIdAsync(model.UserId);
-    //    if (user is null)
-    //        return "User not found!";
+    //------------------------------------------------------------------------------------------------------------
+    public async Task<string> AddRoleAsync(AddRoleUserModel model)
+    {
+        var user = await _userManager.FindByIdAsync(model.UserId);
+        if (user is null)
+            return "User not found!";
 
-    //    if (model.Roles != null && model.Roles.Count > 0)
-    //    {
-    //        foreach (var role in model.Roles)
-    //        {
-    //            if (!await _roleManager.RoleExistsAsync(role))
-    //                return "Invalid Role";
-    //            if (await _userManager.IsInRoleAsync(user, role))
-    //                return "User already assigned to this role";
-    //        }
-    //        var result = await _userManager.AddToRolesAsync(user, model.Roles);
+        if (model.RoleId != null && model.RoleId.Count() > 0)
+        {
+            var roleUser = _userManager.GetRolesAsync(user).Result;
+            IEnumerable<string> roles=new List<string>();
+            foreach (var roleid in model.RoleId)
+            {
+                var role = _roleManager.FindByIdAsync(roleid).Result.Name;
+                if (roleUser.Contains(role))
+                {
+                    roles.Append(role);
+                }
+            }
+            var result = await _userManager.AddToRolesAsync(user, roles);
 
-    //        return result.Succeeded ? string.Empty : "Something went wrong";
-    //    }
-    //    return " Role is empty";
-    //}
+            return result.Succeeded ? string.Empty : "Something went wrong";
+        }
+        return " Role is empty";
+    }
 
-    //public Task<List<string>> GetRoles()
-    //{
-    //    return _roleManager.Roles.Select(x => x.Name).ToListAsync();
-    //}
+    public Task<List<string>> GetRoles()
+    {
+        return _roleManager.Roles.Select(x => x.Name).ToListAsync();
+    }
 
-    ////------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------
 
-    //public async Task Activate(string userId)
-    //{
-    //    var user = await _userManager.FindByIdAsync(userId);
-    //    if (user != null)
-    //    {
-    //        user.Status = true;
-    //        await _userManager.UpdateAsync(user);
-    //    }
-    //}
+    public async Task Activate(string userId)
+    {
+        var user = await _userManager.FindByIdAsync(userId);
+        if (user != null)
+        {
+            user.Status = true;
+            await _userManager.UpdateAsync(user);
+        }
+    }
 
-    //public async Task Suspend(string userId)
-    //{
-    //    var user = await _userManager.FindByIdAsync(userId);
-    //    if (user != null)
-    //    {
-    //        user.Status = false;
-    //        await _userManager.UpdateAsync(user);
-    //    }
-    //}
+    public async Task Suspend(string userId)
+    {
+        var user = await _userManager.FindByIdAsync(userId);
+        if (user != null)
+        {
+            user.Status = false;
+            await _userManager.UpdateAsync(user);
+        }
+    }
 
-    ////------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------
 
     #region create and validate JWT token
 

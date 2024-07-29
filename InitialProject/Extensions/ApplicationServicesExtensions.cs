@@ -1,4 +1,7 @@
-﻿namespace Ecommerce.Extensions;
+﻿using Ecommerce.BusinessLayer.Interfaces;
+using Ecommerce.BusinessLayer.Services;
+
+namespace Ecommerce.Extensions;
 
 public static class ApplicationServicesExtensions
 {
@@ -14,7 +17,9 @@ public static class ApplicationServicesExtensions
             options.Cookie.HttpOnly = true;
             options.Cookie.IsEssential = true;
         });
-
+        services.AddScoped<IAccountService, AccountService>();
+        services.AddTransient<IFileHandling, FileHandling>();
+        services.AddTransient<ISupportService, SupportService>();
         services.AddHttpClient();
         return services;
     }

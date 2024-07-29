@@ -1,4 +1,4 @@
-﻿using Ecommerce.Core.DTO.EntityDTO;
+﻿using Ecommerce.Core.DTO.AuthViewModel.RequesrLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;

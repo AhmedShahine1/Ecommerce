@@ -3,9 +3,11 @@ using Ecommerce.Core.Entity.Others;
 using Ecommerce.Core.Helpers;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics;
 
 namespace Ecommerce.Core.Entity.ApplicationData
 {
+    [DebuggerDisplay("FullName")]
     public class ApplicationUser : IdentityUser
     {
         public bool Status { get; set; } = true; // true account is active, false account isn't active
@@ -24,7 +26,7 @@ namespace Ecommerce.Core.Entity.ApplicationData
         public IEnumerable<Images> Profile { get; set; } = new List<Images>();
 
         [ForeignKey("City")]
-        public int? CityId { get; set; }
+        public string? CityId { get; set; }
         public City City { get; set; }
     }
 }

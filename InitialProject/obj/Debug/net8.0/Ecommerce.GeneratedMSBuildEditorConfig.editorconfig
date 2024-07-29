@@ -26,6 +26,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\Ahmed\Documents\M.A\work\Ecommerce\InitialProject
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Ahmed/Documents/M.A/work/Ecommerce/InitialProject/Areas/Support/Views/Path/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwcG9ydFxWaWV3c1xQYXRoXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmed/Documents/M.A/work/Ecommerce/InitialProject/Areas/Support/Views/Path/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwcG9ydFxWaWV3c1xQYXRoXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmed/Documents/M.A/work/Ecommerce/InitialProject/Areas/Support/Views/Path/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwcG9ydFxWaWV3c1xQYXRoXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Ahmed/Documents/M.A/work/Ecommerce/InitialProject/Areas/Support/Views/RequestResponseViewer/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwcG9ydFxWaWV3c1xSZXF1ZXN0UmVzcG9uc2VWaWV3ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

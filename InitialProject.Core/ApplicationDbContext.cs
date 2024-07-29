@@ -11,7 +11,6 @@ namespace Ecommerce.Core
     {
         //----------------------------------------------------------------------------------
         public virtual DbSet<Paths> Paths { get; set; }
-
         public virtual DbSet<Images> Images { get; set; }
 
         //----------------------------------------------------------------------------------
