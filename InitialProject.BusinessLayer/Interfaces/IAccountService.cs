@@ -17,7 +17,7 @@ public interface IAccountService
     //Task<AuthModel> ChangeOldPasswordAsync(string userId, ChangeOldPassword changePassword);
     //Task<AuthModel> UpdateUserProfile(string userId, UpdateUserMv updateUser);
     //Task<AuthModel> GetUserInfo(string userId);
-    Task<string> AddRoleAsync(AddRoleUserModel model);
+    Task<string> AddRoleAsync(RoleUserModel model);
     Task<List<string>> GetRoles();
 
     string ValidateJwtToken(string token);

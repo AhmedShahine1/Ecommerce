@@ -1,3 +1,5 @@
+using Ecommerce.BusinessLayer.AutoMapper;
+using Ecommerce.BusinessLayer.Interfaces;
 using Ecommerce.Core;
 using Ecommerce.Extensions;
 using Ecommerce.Middleware;
@@ -12,7 +14,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/AspNet.Core/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContextPool<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 // api Services
 builder.Services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true); // validation Error Api
@@ -25,6 +27,7 @@ builder.Services.AddCors(options =>
 });
 // context && json services && IBaseRepository && IUnitOfWork Service
 builder.Services.AddContextServices(builder.Configuration);
+builder.Services.AddMemoryCache();
 builder.Services.AddControllersWithViews()
     .AddRazorRuntimeCompilation();
 

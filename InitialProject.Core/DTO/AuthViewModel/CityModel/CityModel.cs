@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Ecommerce.Core.DTO.AuthViewModel.CityModel
 {
+    [DebuggerDisplay("{NameEn,nq}")]
     public class CityModel
     {
         [StringLength(50)]

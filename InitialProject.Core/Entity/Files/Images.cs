@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace Ecommerce.Core.Entity.Files
 {
-    [DebuggerDisplay("Name")]
+    [DebuggerDisplay("{Name,nq}")]
     public class Images
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();

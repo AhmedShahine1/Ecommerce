@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.Core.DTO.AuthViewModel.RoleModel
 {
-    public class AddRoleUserModel
+    public class RoleUserModel
     {
         [Required]
         public string UserId { get; set; }

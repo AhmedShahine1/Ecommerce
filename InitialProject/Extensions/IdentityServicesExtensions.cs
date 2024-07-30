@@ -2,6 +2,7 @@
 using Ecommerce.Core.Entity.ApplicationData;
 using Ecommerce.Core.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -20,7 +21,8 @@ public static class IdentityServicesExtensions
             options.Password.RequireLowercase = false;
             options.Password.RequiredLength = 6;
             options.User.RequireUniqueEmail = true;
-        }).AddEntityFrameworkStores<ApplicationDbContext>();
+        }).AddEntityFrameworkStores<ApplicationDbContext>()
+        .AddDefaultTokenProviders();
 
         //- JWT services
         services.Configure<Jwt>(config.GetSection("JWT"));

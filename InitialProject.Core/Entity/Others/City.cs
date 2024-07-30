@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Ecommerce.Core.Entity.ApplicationData;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 
 namespace Ecommerce.Core.Entity.Others
 {
-    [DebuggerDisplay("NameEn")]
+    [DebuggerDisplay("{NameEn,nq}")]
     public class City : BaseEntity
     {
         [StringLength(50)]
@@ -25,5 +26,7 @@ namespace Ecommerce.Core.Entity.Others
         public string CountryAr { get; set; }
 
         public bool IsShow { get; set; } = true;
+
+        public ICollection<ApplicationUser> Users { get; set; }
     }
 }

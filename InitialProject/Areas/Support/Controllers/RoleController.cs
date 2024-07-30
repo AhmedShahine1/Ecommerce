@@ -1,149 +1,198 @@
-﻿using Ecommerce.Core.DTO;
-using Ecommerce.Core.DTO.AuthViewModel.FilesModel;
+﻿using AutoMapper;
+using Ecommerce.Core.DTO;
 using Ecommerce.Core.DTO.AuthViewModel.RoleModel;
 using Ecommerce.Core.Entity.ApplicationData;
-using Ecommerce.Core.Entity.Files;
 using Ecommerce.RepositoryLayer.Interfaces;
-using Ecommerce.RepositoryLayer.Repositories;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System;
 
 namespace Ecommerce.Areas.Support.Controllers
 {
     [Area("Support")]
     public class RoleController : Controller
     {
-        private readonly BaseResponse baseResponse;
-        private readonly IUnitOfWork unitOfWork;
-        public RoleController(IUnitOfWork _unitOfWork)
+        private readonly IMapper mapper;
+        private readonly RoleManager<ApplicationRole> roleManager;
+        private readonly IMemoryCache memoryCache;
+        private const string CacheKey = "rolesCache";
+
+        public RoleController(RoleManager<ApplicationRole> _roleManager, IMapper _mapper, IMemoryCache _memoryCache)
         {
-            baseResponse = new BaseResponse();
-            unitOfWork = _unitOfWork;
+            roleManager = _roleManager;
+            mapper = _mapper;
+            memoryCache = _memoryCache;
         }
-        // GET: PathController
+
+        // GET: RoleController
         public async Task<IActionResult> Index()
         {
             try
             {
                 ViewData["Title"] = "Roles";
-                var AllRoles = await unitOfWork.Roles.GetAllAsync();
-                baseResponse.Data = AllRoles;
-                baseResponse.Status = true;
-                baseResponse.ErrorCode = 200;
-                baseResponse.ErrorMessage = "تم جلب البيانات بنجاح";
+
+                if (!memoryCache.TryGetValue(CacheKey, out IEnumerable<ApplicationRole>? AllRoles))
+                {
+                    AllRoles = await roleManager.Roles.ToListAsync();
+                    var cacheEntryOptions = new MemoryCacheEntryOptions
+                    {
+                        AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5), // Cache for 5 minutes
+                        SlidingExpiration = TimeSpan.FromMinutes(2) // Reset cache if accessed within 2 minutes
+                    };
+                    memoryCache.Set(CacheKey, AllRoles, cacheEntryOptions);
+                }
+                return View(AllRoles);
             }
             catch (Exception ex)
             {
-                baseResponse.Status = false;
-                baseResponse.ErrorCode = 400;
-                baseResponse.ErrorMessage = "خطا في جلب البيانات بنجاح";
+                var errorViewModel = new ErrorViewModel
+                {
+                    Message = "خطا في جلب البيانات",
+                    StackTrace = ex.StackTrace
+                };
+                return View("~/Views/Shared/Error.cshtml", errorViewModel);
             }
-            return View(baseResponse);
         }
 
-        // GET: PathController/Create
+        // GET: RoleController/Create
         public IActionResult Create()
         {
             ViewData["Title"] = "Create Role";
             return View();
         }
 
-        // POST: PathController/Create
+        // POST: RoleController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(AddRoleModel roleModel)
+        public async Task<IActionResult> Create(RoleDTO roleModel)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    ApplicationRole roles = new ApplicationRole()
+                    var role = mapper.Map<ApplicationRole>(roleModel);
+                    var result = await roleManager.CreateAsync(role);
+                    if (result.Succeeded)
                     {
-                        Name = roleModel.RoleName,
-                        Description = roleModel.RoleDescription,
-                        ArName = roleModel.RoleAr,
-                    };
-                    await unitOfWork.Roles.AddAsync(roles);
-                    await unitOfWork.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
+                        memoryCache.Remove(CacheKey); // Clear cache
+                        return RedirectToAction(nameof(Index));
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, string.Join("; ", result.Errors.Select(e => e.Description)));
+                    }
                 }
-                baseResponse.Status = false;
-                baseResponse.ErrorCode = 400;
-                baseResponse.ErrorMessage = "فشل حقظ البيانات";
-                return View(baseResponse);
+                return View(roleModel);
             }
-            catch
+            catch (Exception ex)
             {
-                baseResponse.Status = false;
-                baseResponse.ErrorCode = 400;
-                baseResponse.ErrorMessage = "فشل حقظ البيانات";
-                return View(baseResponse);
+                var errorViewModel = new ErrorViewModel
+                {
+                    Message = "خطا في حقظ البيانات",
+                    StackTrace = ex.StackTrace
+                };
+                return View("~/Views/Shared/Error.cshtml", errorViewModel);
             }
         }
 
-        // GET: PathController/Edit/5
+        // GET: RoleController/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             try
             {
                 ViewData["Title"] = "Edit Role";
-                var Role = await unitOfWork.Roles.FindByQuery(s => s.Id == id, isNoTracking: true).FirstOrDefaultAsync();
-                baseResponse.Data = Role;
-                baseResponse.Status = true;
-                baseResponse.ErrorCode = 200;
-                baseResponse.ErrorMessage = "تم جلب البيانات بنجاح";
-                return View(baseResponse);
+                var role = await roleManager.FindByIdAsync(id);
+                ViewBag.Id = id;
+                var roleModel = mapper.Map<RoleDTO>(role);
+                return View(roleModel);
             }
             catch (Exception ex)
             {
-                baseResponse.Status = false;
-                baseResponse.ErrorCode = 400;
-                baseResponse.ErrorMessage = "فشل جلب البيانات ";
-                return View(baseResponse);
+                var errorViewModel = new ErrorViewModel
+                {
+                    Message = "خطا في جلب البيانات",
+                    StackTrace = ex.StackTrace
+                };
+                return View("~/Views/Shared/Error.cshtml", errorViewModel);
             }
         }
-
-        // POST: PathController/Edit/5
+        // POST: RoleController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(ApplicationRole role)
+        public async Task<IActionResult> Edit(RoleDTO roleDTO,string id)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    unitOfWork.Roles.Update(role);
-                    await unitOfWork.SaveChangesAsync();
-                    ViewBag.Message = "تم تعديل البيانات بنجاح";
-                    return RedirectToAction(nameof(Index));
-
+                    var role = await roleManager.FindByIdAsync(id);
+                    role.Name = roleDTO.RoleName;
+                    role.Description = roleDTO.RoleDescription;
+                    role.ArName = roleDTO.RoleAr;
+                    var result = await roleManager.UpdateAsync(role);
+                    if (result.Succeeded)
+                    {
+                        memoryCache.Remove(CacheKey); // Clear cache
+                        ViewBag.Message = "تم تعديل البيانات بنجاح";
+                        return RedirectToAction(nameof(Index));
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, string.Join("; ", result.Errors.Select(e => e.Description)));
+                    }
                 }
-                return View(role);
+                return View(roleDTO);
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                var errorViewModel = new ErrorViewModel
+                {
+                    Message = "خطا في تعديل البيانات",
+                    StackTrace = ex.StackTrace
+                };
+                return View("~/Views/Shared/Error.cshtml", errorViewModel);
             }
         }
 
-        // POST: PathController/Delete/5
+        // POST: RoleController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(string id)
         {
             try
             {
-                var role = await unitOfWork.Roles.FindByQuery(s => s.Id == id).FirstOrDefaultAsync();
-                unitOfWork.Roles.Delete(role);
-                await unitOfWork.SaveChangesAsync();
-                ViewBag.Message = "تم حذف البيانات بنجاح";
-                return RedirectToAction(nameof(Index));
+                var role = await roleManager.FindByIdAsync(id);
+                if (role == null)
+                {
+                    return NotFound();
+                }
+
+                var result = await roleManager.DeleteAsync(role);
+                if (result.Succeeded)
+                {
+                    memoryCache.Remove(CacheKey); // Clear cache
+                    ViewBag.Message = "تم حذف البيانات بنجاح";
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, string.Join("; ", result.Errors.Select(e => e.Description)));
+                }
+
+                return View(nameof(Index));
             }
-            catch
+            catch (Exception ex)
             {
-                ViewBag.Message = "فشل حذف البيانات";
-                return RedirectToAction(nameof(Index));
+                var errorViewModel = new ErrorViewModel
+                {
+                    Message = "خطا في حذف البيانات",
+                    StackTrace = ex.StackTrace
+                };
+                return View("~/Views/Shared/Error.cshtml", errorViewModel);
             }
         }
     }

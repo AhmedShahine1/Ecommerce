@@ -1,22 +1,29 @@
-﻿using Ecommerce.Core.DTO;
+﻿using AutoMapper;
+using Ecommerce.Core.DTO;
 using Ecommerce.Core.DTO.AuthViewModel.FilesModel;
+using Ecommerce.Core.DTO.AuthViewModel.RoleModel;
+using Ecommerce.Core.Entity.ApplicationData;
 using Ecommerce.Core.Entity.Files;
 using Ecommerce.RepositoryLayer.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Ecommerce.Areas.Support.Controllers
 {
     [Area("Support")]
     public class PathController : Controller
     {
-        private readonly BaseResponse baseResponse;
         private readonly IUnitOfWork unitOfWork;
-        public PathController(IUnitOfWork _unitOfWork)
+        private readonly IMapper mapper;
+        private readonly IMemoryCache memoryCache;
+        private const string CacheKey = "pathsCache";
+        public PathController(IUnitOfWork _unitOfWork, IMapper _mapper, IMemoryCache _memoryCache)
         {
-            baseResponse = new BaseResponse();
             unitOfWork = _unitOfWork;
+            mapper = _mapper;
+            memoryCache = _memoryCache;
         }
         // GET: PathController
         public async Task<IActionResult> Index()
@@ -24,19 +31,27 @@ namespace Ecommerce.Areas.Support.Controllers
             try
             {
                 ViewData["Title"] = "Paths";
-                var AllPaths =await unitOfWork.PathsRepository.GetAllAsync();
-                baseResponse.Data = AllPaths;
-                baseResponse.Status = true;
-                baseResponse.ErrorCode = 200;
-                baseResponse.ErrorMessage = "تم جلب البيانات بنجاح";
+                if (!memoryCache.TryGetValue(CacheKey, out IEnumerable<Paths>? AllPaths))
+                {
+                    AllPaths = await unitOfWork.PathsRepository.GetAllAsync();
+                    var cacheEntryOptions = new MemoryCacheEntryOptions
+                    {
+                        AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5), // Cache for 5 minutes
+                        SlidingExpiration = TimeSpan.FromMinutes(2) // Reset cache if accessed within 2 minutes
+                    };
+                    memoryCache.Set(CacheKey, AllPaths, cacheEntryOptions);
+                }
+                return View(AllPaths);
             }
             catch (Exception ex)
             {
-                baseResponse.Status = false;
-                baseResponse.ErrorCode = 400;
-                baseResponse.ErrorMessage = "خطا في جلب البيانات بنجاح";
+                var errorViewModel = new ErrorViewModel
+                {
+                    Message = "خطا في جلب البيانات",
+                    StackTrace = ex.StackTrace
+                };
+                return View("~/Views/Shared/Error.cshtml", errorViewModel);
             }
-            return View(baseResponse);
         }
 
         // GET: PathController/Create
@@ -55,26 +70,22 @@ namespace Ecommerce.Areas.Support.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Paths paths = new Paths()
-                    {
-                        Name= pathsModel.Name,
-                        Description= pathsModel.Description,
-                    };
+                    var paths = mapper.Map<Paths>(pathsModel);
                     await unitOfWork.PathsRepository.AddAsync(paths);
                     await unitOfWork.SaveChangesAsync();
+                    memoryCache.Remove(CacheKey); // Clear cache
                     return RedirectToAction(nameof(Index));
                 }
-                baseResponse.Status = false;
-                baseResponse.ErrorCode = 400;
-                baseResponse.ErrorMessage = "فشل حقظ البيانات";
-                return View(baseResponse);
+                return View(pathsModel);
             }
-            catch
+            catch (Exception ex)
             {
-                baseResponse.Status = false;
-                baseResponse.ErrorCode = 400;
-                baseResponse.ErrorMessage =  "فشل حقظ البيانات";
-                return View(baseResponse);
+                var errorViewModel = new ErrorViewModel
+                {
+                    Message = "خطا في حفظ البيانات",
+                    StackTrace = ex.StackTrace
+                };
+                return View("~/Views/Shared/Error.cshtml", errorViewModel);
             }
         }
 
@@ -85,18 +96,16 @@ namespace Ecommerce.Areas.Support.Controllers
             {
                 ViewData["Title"] = "Edit Path";
                 var Paths = await unitOfWork.PathsRepository.FindByQuery(s => s.Id == id, isNoTracking: true).FirstOrDefaultAsync();
-                baseResponse.Data = Paths;
-                baseResponse.Status = true;
-                baseResponse.ErrorCode = 200;
-                baseResponse.ErrorMessage = "تم جلب البيانات بنجاح";
-                return View(baseResponse);
+                return View(Paths);
             }
             catch (Exception ex)
             {
-                baseResponse.Status = false;
-                baseResponse.ErrorCode = 400;
-                baseResponse.ErrorMessage = "فشل جلب البيانات ";
-                return View(baseResponse);
+                var errorViewModel = new ErrorViewModel
+                {
+                    Message = "خطا في جلب البيانات",
+                    StackTrace = ex.StackTrace
+                };
+                return View("~/Views/Shared/Error.cshtml", errorViewModel);
             }
         }
 
@@ -111,15 +120,20 @@ namespace Ecommerce.Areas.Support.Controllers
                 {
                     unitOfWork.PathsRepository.Update(paths);
                     await unitOfWork.SaveChangesAsync();
+                    memoryCache.Remove(CacheKey); // Clear cache
                     ViewBag.Message = "تم تعديل البيانات بنجاح";
                     return RedirectToAction(nameof(Index));
-
                 }
                 return View(paths);
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                var errorViewModel = new ErrorViewModel
+                {
+                    Message = "خطا في تعديل البيانات",
+                    StackTrace = ex.StackTrace
+                };
+                return View("~/Views/Shared/Error.cshtml", errorViewModel);
             }
         }
 
@@ -133,13 +147,18 @@ namespace Ecommerce.Areas.Support.Controllers
                 var Paths = await unitOfWork.PathsRepository.FindByQuery(s => s.Id == id).FirstOrDefaultAsync();
                 unitOfWork.PathsRepository.Delete(Paths);
                 await unitOfWork.SaveChangesAsync();
+                memoryCache.Remove(CacheKey); // Clear cache
                 ViewBag.Message = "تم حذف البيانات بنجاح";
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception ex)
             {
-                ViewBag.Message = "فشل حذف البيانات";
-                return RedirectToAction(nameof(Index));
+                var errorViewModel = new ErrorViewModel
+                {
+                    Message = "خطا في حذف البيانات",
+                    StackTrace = ex.StackTrace
+                };
+                return View("~/Views/Shared/Error.cshtml", errorViewModel);
             }
         }
     }

@@ -487,7 +487,7 @@ public class AccountService : IAccountService
     //}
 
     //------------------------------------------------------------------------------------------------------------
-    public async Task<string> AddRoleAsync(AddRoleUserModel model)
+    public async Task<string> AddRoleAsync(RoleUserModel model)
     {
         var user = await _userManager.FindByIdAsync(model.UserId);
         if (user is null)

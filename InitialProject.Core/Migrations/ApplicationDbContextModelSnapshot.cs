@@ -40,7 +40,6 @@ namespace Ecommerce.Core.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
@@ -70,7 +69,6 @@ namespace Ecommerce.Core.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("CityId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -90,6 +88,9 @@ namespace Ecommerce.Core.Migrations
 
                     b.Property<int>("Gender")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsFeatured")
                         .HasColumnType("bit");
@@ -132,15 +133,15 @@ namespace Ecommerce.Core.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
-
-                    b.Property<bool>("status")
-                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -179,7 +180,7 @@ namespace Ecommerce.Core.Migrations
 
                     b.HasIndex("pathId");
 
-                    b.ToTable("Images", (string)null);
+                    b.ToTable("Images");
                 });
 
             modelBuilder.Entity("Ecommerce.Core.Entity.Files.Paths", b =>
@@ -197,7 +198,7 @@ namespace Ecommerce.Core.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Paths", (string)null);
+                    b.ToTable("Paths");
                 });
 
             modelBuilder.Entity("Ecommerce.Core.Entity.Others.City", b =>
@@ -245,7 +246,7 @@ namespace Ecommerce.Core.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cities", (string)null);
+                    b.ToTable("Cities");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -357,10 +358,8 @@ namespace Ecommerce.Core.Migrations
             modelBuilder.Entity("Ecommerce.Core.Entity.ApplicationData.ApplicationUser", b =>
                 {
                     b.HasOne("Ecommerce.Core.Entity.Others.City", "City")
-                        .WithMany()
-                        .HasForeignKey("CityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Users")
+                        .HasForeignKey("CityId");
 
                     b.Navigation("City");
                 });
@@ -372,7 +371,7 @@ namespace Ecommerce.Core.Migrations
                         .HasForeignKey("ApplicationUserId");
 
                     b.HasOne("Ecommerce.Core.Entity.Files.Paths", "path")
-                        .WithMany()
+                        .WithMany("Images")
                         .HasForeignKey("pathId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -434,6 +433,16 @@ namespace Ecommerce.Core.Migrations
             modelBuilder.Entity("Ecommerce.Core.Entity.ApplicationData.ApplicationUser", b =>
                 {
                     b.Navigation("Profile");
+                });
+
+            modelBuilder.Entity("Ecommerce.Core.Entity.Files.Paths", b =>
+                {
+                    b.Navigation("Images");
+                });
+
+            modelBuilder.Entity("Ecommerce.Core.Entity.Others.City", b =>
+                {
+                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }

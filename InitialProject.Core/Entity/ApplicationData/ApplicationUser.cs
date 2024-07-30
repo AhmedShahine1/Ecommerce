@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace Ecommerce.Core.Entity.ApplicationData
 {
-    [DebuggerDisplay("FullName")]
+    [DebuggerDisplay("{FullName,nq}")]
     public class ApplicationUser : IdentityUser
     {
         public bool Status { get; set; } = true; // true account is active, false account isn't active
@@ -23,7 +23,7 @@ namespace Ecommerce.Core.Entity.ApplicationData
         public float? Lng { get; set; }
 
         //-----------------------------------------------------------------------------------------
-        public IEnumerable<Images> Profile { get; set; } = new List<Images>();
+        public ICollection<Images> Profile { get; set; } = new List<Images>();
 
         [ForeignKey("City")]
         public string? CityId { get; set; }

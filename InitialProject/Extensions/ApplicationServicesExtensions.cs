@@ -1,12 +1,14 @@
 ﻿using Ecommerce.BusinessLayer.Interfaces;
 using Ecommerce.BusinessLayer.Services;
+using System.Reflection;
+using Ecommerce.BusinessLayer.AutoMapper; // Explicit namespace
 
 namespace Ecommerce.Extensions;
 
 public static class ApplicationServicesExtensions
 {
     // interfaces sevices [IAccountService, IPhotoHandling  ]
-    public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
+    public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config, params Assembly[] assemblies)
     {
         services.AddDistributedMemoryCache(); // Add this line to configure the distributed cache
 
@@ -19,8 +21,8 @@ public static class ApplicationServicesExtensions
         });
         services.AddScoped<IAccountService, AccountService>();
         services.AddTransient<IFileHandling, FileHandling>();
-        services.AddTransient<ISupportService, SupportService>();
         services.AddHttpClient();
+        services.AddAutoMapper(typeof(MappingProfile));
         return services;
     }
 
