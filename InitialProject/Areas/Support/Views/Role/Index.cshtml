@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Ecommerce.Core.Entity.ApplicationData.ApplicationRole>
 
-<h1>@ViewData["Title"]</h1>
+
 
 <form>
     <button type="submit" class="btn btn-primary p-2" asp-action="Create">Create New</button>
@@ -42,13 +42,13 @@
                 @Html.DisplayFor(modelItem => item.NormalizedName)
             </td>
                 <td>
-                    <form>
-                        <button type="submit" class="btn btn-warning p-2" asp-action="Edit" asp-route-id="@item.Id">Edit</button>
+                    <form class="p-2">
+                        <button type="submit" class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</button>
                     </form>
                 </td>
                 <td>
                     <form class="p-2" asp-action="Delete" asp-route-id="@item.Id">
-                        <input type="submit" value="Delete" class="btn btn-primary" />
+                        <input type="submit" value="Delete" class="btn btn-danger" />
                     </form>
                 </td>
             </tr>

@@ -1,6 +1,14 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\NewFolder\\AdminLTELogo.png",
+      "PackagePath": "staticwebassets\\NewFolder\\AdminLTELogo.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\NewFolder\\user1-128x128.jpg",
+      "PackagePath": "staticwebassets\\NewFolder\\user1-128x128.jpg"
+    },
+    {
       "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -181,6 +189,10 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.min.js.map"
     },
     {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\css\\OverlayScrollbars.min.css",
+      "PackagePath": "staticwebassets\\lib\\css\\OverlayScrollbars.min.css"
+    },
+    {
       "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\css\\adminlte.css",
       "PackagePath": "staticwebassets\\lib\\css\\adminlte.css"
     },
@@ -195,6 +207,126 @@
     {
       "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\css\\adminlte.min.css.map",
       "PackagePath": "staticwebassets\\lib\\css\\adminlte.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\lib\\css\\all.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\css\\all.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\css\\all.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\css\\all.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\css\\brands.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\css\\brands.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\css\\brands.min.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\css\\brands.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\css\\fontawesome.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\css\\fontawesome.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\css\\fontawesome.min.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\css\\fontawesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\css\\regular.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\css\\regular.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\css\\regular.min.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\css\\regular.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\css\\solid.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\css\\solid.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\css\\solid.min.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\css\\solid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\css\\svg-with-js.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\css\\svg-with-js.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\css\\svg-with-js.min.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\css\\svg-with-js.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\css\\v4-shims.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\css\\v4-shims.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\css\\v4-shims.min.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\css\\v4-shims.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\webfonts\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\webfonts\\fa-brands-400.eot"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\webfonts\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\webfonts\\fa-brands-400.svg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\webfonts\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\webfonts\\fa-brands-400.woff"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\webfonts\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\webfonts\\fa-regular-400.eot"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\webfonts\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\webfonts\\fa-regular-400.svg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\webfonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\webfonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\webfonts\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\webfonts\\fa-solid-900.eot"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\webfonts\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\webfonts\\fa-solid-900.svg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\webfonts\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\webfonts\\fa-solid-900.woff"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\fontawesome-free\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\lib\\fontawesome-free\\webfonts\\fa-solid-900.woff2"
     },
     {
       "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\jquery-validate\\additional-methods.js",
@@ -741,6 +873,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\jquery\\jquery.overlayScrollbars.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\jquery.overlayScrollbars.min.js"
+    },
+    {
       "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\jquery\\jquery.slim.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\jquery.slim.js"
     },
@@ -751,6 +887,10 @@
     {
       "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\jquery\\jquery.slim.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\jquery.slim.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\js\\Treeview.js",
+      "PackagePath": "staticwebassets\\lib\\js\\Treeview.js"
     },
     {
       "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\js\\adminlte.js.map",
@@ -1383,6 +1523,22 @@
     {
       "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\signalr.js\\jquery.signalR.min.js",
       "PackagePath": "staticwebassets\\lib\\signalr.js\\jquery.signalR.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\toastr\\toastr.css",
+      "PackagePath": "staticwebassets\\lib\\toastr\\toastr.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\toastr\\toastr.js.map",
+      "PackagePath": "staticwebassets\\lib\\toastr\\toastr.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\toastr\\toastr.min.css",
+      "PackagePath": "staticwebassets\\lib\\toastr\\toastr.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\lib\\toastr\\toastr.min.js",
+      "PackagePath": "staticwebassets\\lib\\toastr\\toastr.min.js"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Ecommerce.Microsoft.AspNetCore.StaticWebAssets.props",
