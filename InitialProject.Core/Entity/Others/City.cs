@@ -25,8 +25,9 @@ namespace Ecommerce.Core.Entity.Others
         [Display(Name = " اسم الدولة بالانجليزي")]
         public string CountryAr { get; set; }
 
+        [Display(Name = " عرض المدينه")]
         public bool IsShow { get; set; } = true;
 
-        public ICollection<ApplicationUser> Users { get; set; }
+        public ICollection<ApplicationUser>? Users { get; set; }
     }
 }

@@ -21,6 +21,7 @@ namespace Ecommerce.Core.Entity
         [JsonIgnore]
         public bool IsDeleted { get; set; } = false;
 
+        [Display(Name = "تاريخ الحذف  ")]
         [JsonIgnore]
         public DateTime? DeletedAt { get; set; } = null;
     }

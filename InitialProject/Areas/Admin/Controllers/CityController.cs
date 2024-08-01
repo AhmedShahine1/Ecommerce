@@ -1,48 +1,50 @@
 ﻿using AutoMapper;
-using Ecommerce.Core.DTO;
-using Ecommerce.Core.DTO.AuthViewModel.FilesModel;
-using Ecommerce.Core.DTO.AuthViewModel.RoleModel;
-using Ecommerce.Core.Entity.ApplicationData;
-using Ecommerce.Core.Entity.Files;
+using Ecommerce.Core.DTO.AuthViewModel.CityModel;
 using Ecommerce.Core.Entity.Others;
 using Ecommerce.RepositoryLayer.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Ecommerce.Core.DTO;
 
-namespace Ecommerce.Areas.Support.Controllers
+namespace Ecommerce.Areas.Admin.Controllers
 {
-    [Area("Support")]
-    public class PathController : Controller
+    [Area("Admin")]
+    public class CityController : Controller
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
         private readonly IMemoryCache memoryCache;
-        private const string CacheKey = "pathsCache";
-        public PathController(IUnitOfWork _unitOfWork, IMapper _mapper, IMemoryCache _memoryCache)
+        private const string CacheKey = "CityCache";
+        public CityController(IUnitOfWork _unitOfWork, IMapper _mapper, IMemoryCache _memoryCache)
         {
             unitOfWork = _unitOfWork;
             mapper = _mapper;
             memoryCache = _memoryCache;
         }
-        // GET: PathController
+
+        // GET: CityController
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             try
             {
-                ViewData["Title"] = "Paths";
-                if (!memoryCache.TryGetValue(CacheKey, out IEnumerable<Paths>? AllPaths))
+                ViewData["Title"] = "Cities";
+                if (!memoryCache.TryGetValue(CacheKey, out IEnumerable<City>? Cities))
                 {
-                    AllPaths = await unitOfWork.PathsRepository.GetAllAsync();
+                    Cities = await unitOfWork.CityRepository.GetAllAsync();
                     var cacheEntryOptions = new MemoryCacheEntryOptions
                     {
                         AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5), // Cache for 5 minutes
                         SlidingExpiration = TimeSpan.FromMinutes(2) // Reset cache if accessed within 2 minutes
                     };
-                    memoryCache.Set(CacheKey, AllPaths, cacheEntryOptions);
+                    memoryCache.Set(CacheKey, Cities, cacheEntryOptions);
                 }
-                return View(AllPaths);
+                return View(Cities);
             }
             catch (Exception ex)
             {
@@ -55,29 +57,30 @@ namespace Ecommerce.Areas.Support.Controllers
             }
         }
 
-        // GET: PathController/Create
+        // GET: CityController/Create
+        [HttpGet]
         public IActionResult Create()
         {
-            ViewData["Title"] = "Create Path";
+            ViewData["Title"] = "Create City";
             return View();
         }
 
-        // POST: PathController/Create
+        // POST: CityController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(PathsModel pathsModel)
+        public async Task<IActionResult> Create(CityModel cityModel)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var paths = mapper.Map<Paths>(pathsModel);
-                    await unitOfWork.PathsRepository.AddAsync(paths);
+                    var City = mapper.Map<City>(cityModel);
+                    await unitOfWork.CityRepository.AddAsync(City);
                     await unitOfWork.SaveChangesAsync();
                     memoryCache.Remove(CacheKey); // Clear cache
                     return RedirectToAction(nameof(Index));
                 }
-                return View(pathsModel);
+                return View(cityModel);
             }
             catch (Exception ex)
             {
@@ -90,16 +93,22 @@ namespace Ecommerce.Areas.Support.Controllers
             }
         }
 
-        // GET: PathController/Edit/5
+        // GET: CityController/Edit/5
+        [HttpGet]
         public async Task<IActionResult> Edit(string id)
         {
             try
             {
-                ViewData["Title"] = "Edit Path";
-                var Path = (memoryCache.TryGetValue(CacheKey, out IEnumerable<Paths>? Paths)) ?
-                    Paths?.FirstOrDefault(s => s.Id == id) :
-                    await unitOfWork.PathsRepository.FindByQuery(s => s.Id == id).FirstOrDefaultAsync();
-                return View(Path);
+                ViewData["Title"] = "Edit City";
+                var city = (memoryCache.TryGetValue(CacheKey, out IEnumerable<City>? Cities)) ?
+                    Cities?.FirstOrDefault(s => s.Id == id) :
+                    await unitOfWork.CityRepository.FindByQuery(s => s.Id == id).FirstOrDefaultAsync();
+
+                if (city == null)
+                {
+                    throw new Exception("City not found");
+                }
+                return View(city);
             }
             catch (Exception ex)
             {
@@ -112,22 +121,24 @@ namespace Ecommerce.Areas.Support.Controllers
             }
         }
 
-        // POST: PathController/Edit/5
+        // POST: CityController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Paths paths)
+        public async Task<IActionResult> Edit(City city)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    unitOfWork.PathsRepository.Update(paths);
+                    city.IsUpdated = true;
+                    city.UpdatedAt = DateTime.Now;
+                    unitOfWork.CityRepository.Update(city);
                     await unitOfWork.SaveChangesAsync();
                     memoryCache.Remove(CacheKey); // Clear cache
                     ViewBag.Message = "تم تعديل البيانات بنجاح";
                     return RedirectToAction(nameof(Index));
                 }
-                return View(paths);
+                return View(city);
             }
             catch (Exception ex)
             {
@@ -140,17 +151,23 @@ namespace Ecommerce.Areas.Support.Controllers
             }
         }
 
-        // POST: PathController/Delete/5
+        // POST: CityController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(string id)
         {
             try
             {
-                var Path = (memoryCache.TryGetValue(CacheKey, out IEnumerable<Paths>? Paths)) ?
-                    Paths?.FirstOrDefault(s => s.Id == id) :
-                    await unitOfWork.PathsRepository.FindByQuery(s => s.Id == id).FirstOrDefaultAsync();
-                unitOfWork.PathsRepository.Delete(Path);
+                var city = (memoryCache.TryGetValue(CacheKey, out IEnumerable<City>? Cities)) ? 
+                    Cities?.FirstOrDefault(s => s.Id == id) :
+                    await unitOfWork.CityRepository.FindByQuery(s => s.Id == id).FirstOrDefaultAsync();
+                if (city == null)
+                {
+                    throw new Exception("City not found");
+                }
+                city.IsDeleted = true;
+                city.DeletedAt = DateTime.Now;
+                unitOfWork.CityRepository.Update(city);
                 await unitOfWork.SaveChangesAsync();
                 memoryCache.Remove(CacheKey); // Clear cache
                 ViewBag.Message = "تم حذف البيانات بنجاح";

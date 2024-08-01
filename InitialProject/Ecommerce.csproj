@@ -14,6 +14,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\City\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\City\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\City\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewImports.cshtml" />
     <None Include="wwwroot\lib\fontawesome-free\webfonts\fa-brands-400.svg" />
     <None Include="wwwroot\lib\fontawesome-free\webfonts\fa-brands-400.woff2" />
     <None Include="wwwroot\lib\fontawesome-free\webfonts\fa-regular-400.svg" />

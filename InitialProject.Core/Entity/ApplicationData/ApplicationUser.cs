@@ -23,7 +23,9 @@ namespace Ecommerce.Core.Entity.ApplicationData
         public float? Lng { get; set; }
 
         //-----------------------------------------------------------------------------------------
-        public ICollection<Images> Profile { get; set; } = new List<Images>();
+        [ForeignKey(nameof(Profile))]
+        public string ProfileId { get; set; }
+        public Images Profile { get; set; }
 
         [ForeignKey("City")]
         public string? CityId { get; set; }

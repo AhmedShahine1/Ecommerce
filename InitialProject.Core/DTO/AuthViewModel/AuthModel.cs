@@ -23,7 +23,7 @@ namespace Ecommerce.Core.DTO.AuthViewModel
         public string PhoneNumber { get; set; }
         public int Age { get; set; }
         public IList<string> Roles { get; set; }
-        public IList<string> Profiles { get; set; }
+        public string Profile { get; set; }
         public Gender Gender { get; set; }
         public Language Language { get; set; }
         public City City { get; set; }
