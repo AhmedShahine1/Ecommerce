@@ -1,30 +1,20 @@
 ﻿using AutoMapper;
-using Ecommerce.BusinessLayer.AutoMapper;
 using Ecommerce.BusinessLayer.Interfaces;
-using Ecommerce.Core.DTO;
 using Ecommerce.Core.DTO.AuthViewModel.RegisterModel;
-using Ecommerce.Core.Entity.ApplicationData;
-using Ecommerce.Core.Entity.Files;
-using Ecommerce.RepositoryLayer.Interfaces;
+using Ecommerce.Core.DTO;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Ecommerce.Areas.Admin.Controllers
+namespace Ecommerce.Areas.Support.Controllers
 {
-    [Area("Admin")]
-    [Authorize(Policy = "Admin")]
-    public class AdminController : Controller
+    [Area("Support")]
+    [Authorize(Policy = "Support Developer")]
+    public class SupportDeveloperController : Controller
     {
         private readonly IAccountService accountService;
         private readonly IMapper mapper;
-        public AdminController(IAccountService _accountService, IMapper _mapper)
+        public SupportDeveloperController(IAccountService _accountService, IMapper _mapper)
         {
             accountService = _accountService;
             mapper = _mapper;
@@ -38,14 +28,14 @@ namespace Ecommerce.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterAdmin model)
+        public async Task<IActionResult> Register(RegisterSupportDeveloper model)
         {
             try
             {
                 var cities = await accountService.GetAllCitiesAsync();
                 if (ModelState.IsValid)
                 {
-                    var result = await accountService.RegisterAdmin(model);
+                    var result = await accountService.RegisterSupportDeveloper(model);
                     if (result.Succeeded)
                     {
                         return RedirectToAction("Index", "Home", new { area = "" });
@@ -75,7 +65,7 @@ namespace Ecommerce.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            var model = new RegisterAdmin
+            var model = new RegisterSupportDeveloper
             {
                 FullName = admin.FullName,
                 Email = admin.Email,
@@ -91,11 +81,11 @@ namespace Ecommerce.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(string id, RegisterAdmin model)
+        public async Task<IActionResult> Edit(string id, RegisterSupportDeveloper model)
         {
             if (ModelState.IsValid)
             {
-                var result = await accountService.UpdateAdmin(id, model);
+                var result = await accountService.UpdateSupportDeveloper(id, model);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index", "Home", new { area = "" });

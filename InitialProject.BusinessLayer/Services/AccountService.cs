@@ -88,6 +88,38 @@ public class AccountService : IAccountService
 
         return result;
     }
+
+    public async Task<IdentityResult> RegisterSupportDeveloper(RegisterSupportDeveloper model)
+    {
+        var user = mapper.Map<ApplicationUser>(model);
+
+        if (model.ImageProfile != null)
+        {
+            var path = await GetPathByName("ProfileImages");
+            user.ProfileId = await _fileHandling.UploadFile(model.ImageProfile, path);
+        }
+        else
+        {
+            var path = await GetPathByName("ProfileImages");
+            user.ProfileId = await _fileHandling.DefaultProfile(path);
+        }
+
+        // Create the user
+        var result = await _userManager.CreateAsync(user, model.Password);
+
+        if (result.Succeeded)
+        {
+            await _userManager.AddToRoleAsync(user, "Support Developer");
+        }
+        else
+        {
+            // Handle potential errors by throwing an exception or logging details
+            throw new InvalidOperationException("Failed to create user: " + string.Join(", ", result.Errors.Select(e => e.Description)));
+        }
+
+        return result;
+    }
+
     //------------------------------------------------------------------------------------------------------------
     public async Task<IdentityResult> UpdateAdmin(string adminId, RegisterAdmin model)
     {
@@ -124,6 +156,53 @@ public class AccountService : IAccountService
             {
                 // Log errors
                 Console.WriteLine($"Error updating user: {string.Join(", ", result.Errors.Select(e => e.Description))}");
+            }
+            return result;
+        }
+        catch (Exception ex)
+        {
+            // Log the exception
+            Console.WriteLine($"Error updating user: {ex.Message}");
+            throw new InvalidOperationException("Failed to update admin", ex);
+        }
+    }
+
+    public async Task<IdentityResult> UpdateSupportDeveloper(string adminId, RegisterSupportDeveloper model)
+    {
+        var user = await _userManager.FindByIdAsync(adminId);
+        if (user == null)
+            throw new ArgumentException("Admin not found");
+
+        user.FullName = model.FullName;
+        user.Age = model.Age;
+        user.Gender = model.Gender;
+        user.Language = model.Language;
+        user.CityId = model.CityId;
+
+        if (model.ImageProfile != null)
+        {
+            var path = await GetPathByName("ProfileImages");
+            try
+            {
+                var newProfileId = await _fileHandling.UpdateFile(model.ImageProfile, path, user.ProfileId);
+                user.ProfileId = newProfileId;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception
+                Console.WriteLine($"Error updating file: {ex.Message}");
+                throw new InvalidOperationException("Failed to update profile image", ex);
+            }
+        }
+
+        try
+        {
+            var result = await _userManager.UpdateAsync(user);
+            if (!result.Succeeded)
+            {
+                // Log errors
+                Console.WriteLine($"Error updating user: {string.Join(", ", result.Errors.Select(e => e.Description))}");
+                throw new InvalidOperationException($"Error updating user: {string.Join(", ", result.Errors.Select(e => e.Description))}");
             }
             return result;
         }

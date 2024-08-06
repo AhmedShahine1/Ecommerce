@@ -41,13 +41,13 @@ public static class IdentityServicesExtensions
         });
         services.AddAuthorization(options =>
         {
-            options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
+            options.AddPolicy("Admin", policy => policy.RequireRole("Admin", "Support Developer"));
             options.AddPolicy("Support Developer", policy => policy.RequireRole("Support Developer"));
-            options.AddPolicy("Guest", policy => policy.RequireRole("Guest"));
-            options.AddPolicy("Support Staff", policy => policy.RequireRole("Support Staff"));
-            options.AddPolicy("Customer", policy => policy.RequireRole("Customer"));
-            options.AddPolicy("Vendor", policy => policy.RequireRole("Vendor"));
-            options.AddPolicy("Delivery Personnel", policy => policy.RequireRole("Delivery Personnel"));
+            options.AddPolicy("Guest", policy => policy.RequireRole("Guest", "Admin", "Support Developer"));
+            options.AddPolicy("Support Staff", policy => policy.RequireRole("Support Staff", "Admin", "Support Developer", "Customer", "Vendor", "Delivery Personnel"));
+            options.AddPolicy("Customer", policy => policy.RequireRole("Customer", "Admin", "Support Developer"));
+            options.AddPolicy("Vendor", policy => policy.RequireRole("Vendor", "Admin", "Support Developer"));
+            options.AddPolicy("Delivery Personnel", policy => policy.RequireRole("Delivery Personnel", "Admin", "Support Developer"));
         });
 
         return services;

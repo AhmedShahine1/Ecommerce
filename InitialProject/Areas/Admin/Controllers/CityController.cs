@@ -15,7 +15,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace Ecommerce.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin,Support Developer")]
+    [Authorize(AuthenticationSchemes = "Bearer", Policy = "Admin")]
     public class CityController : Controller
     {
         private readonly IUnitOfWork unitOfWork;

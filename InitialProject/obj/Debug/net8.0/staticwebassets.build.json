@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qFlsSToIVdC38UojGRRC6nJGJYFs0C6OdwTPbh5fi+Y=",
+  "Hash": "JVscgfsRYxyct+6B7RIP0hDa/ABekyvmTV+Eh1vi3e0=",
   "Source": "Ecommerce",
   "BasePath": "_content/Ecommerce",
   "Mode": "Default",
@@ -4881,6 +4881,25 @@
       "OriginalItemSpec": "wwwroot\\lib\\popper.js\\umd\\popper.min.js"
     },
     {
+      "Identity": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\ProfileImages\\0O7TL5Z26Y_UserIcon.jpg",
+      "SourceId": "Ecommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\",
+      "BasePath": "_content/Ecommerce",
+      "RelativePath": "ProfileImages/0O7TL5Z26Y_UserIcon.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProfileImages\\0O7TL5Z26Y_UserIcon.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\ProfileImages\\HIKCVCOKQF_unnamed.png",
       "SourceId": "Ecommerce",
       "SourceType": "Discovered",
@@ -4898,6 +4917,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ProfileImages\\HIKCVCOKQF_unnamed.png"
+    },
+    {
+      "Identity": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\ProfileImages\\SLB2BN73IO_UserIcon.jpg",
+      "SourceId": "Ecommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\",
+      "BasePath": "_content/Ecommerce",
+      "RelativePath": "ProfileImages/SLB2BN73IO_UserIcon.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProfileImages\\SLB2BN73IO_UserIcon.jpg"
     },
     {
       "Identity": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\ProfileImages\\user1-128x128.jpg",

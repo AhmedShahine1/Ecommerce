@@ -1,10 +1,12 @@
 ﻿using Ecommerce.BusinessLayer.Interfaces;
 using Ecommerce.Core.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.Areas.Support.Controllers
 {
     [Area("Support")]
+    [Authorize(Policy = "Support Developer")]
     public class RequestResponseViewerController : Controller
     {
         private readonly IRequestResponseService _requestResponseService;

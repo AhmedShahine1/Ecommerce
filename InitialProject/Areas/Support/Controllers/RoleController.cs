@@ -10,10 +10,12 @@ using Microsoft.Extensions.Caching.Memory;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Ecommerce.Areas.Support.Controllers
 {
     [Area("Support")]
+    [Authorize(Policy = "Support Developer")]
     public class RoleController : Controller
     {
         private readonly IMapper mapper;

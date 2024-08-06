@@ -65,7 +65,7 @@ namespace Ecommerce.BusinessLayer.Services
             {
                 Directory.CreateDirectory(uploads);
             }
-            var uniqueFileName = $"{RandomString(10)}_UserIcon";
+            var uniqueFileName = $"{RandomString(10)}_UserIcon.jpg";
             var destinationPath = Path.Combine(uploads, uniqueFileName);
             File.Copy(sourcePath, destinationPath, true);
             var image = new Images

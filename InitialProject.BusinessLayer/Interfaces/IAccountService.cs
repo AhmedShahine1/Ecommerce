@@ -12,6 +12,8 @@ public interface IAccountService
     Task<ApplicationUser> GetUserById(string id);
     Task<IdentityResult> RegisterAdmin(RegisterAdmin model);
     Task<IdentityResult> UpdateAdmin(string adminId, RegisterAdmin model);
+    Task<IdentityResult> RegisterSupportDeveloper(RegisterSupportDeveloper model);
+    Task<IdentityResult> UpdateSupportDeveloper(string adminId, RegisterSupportDeveloper model);
     Task<(bool IsSuccess, string Token, string ErrorMessage)> Login(LoginModel model);
     Task<bool> Logout(string token);
     Task<IEnumerable<SelectListItem>> GetAllCitiesAsync();

@@ -6,6 +6,7 @@ using Ecommerce.Core.Entity.ApplicationData;
 using Ecommerce.Core.Entity.Files;
 using Ecommerce.Core.Entity.Others;
 using Ecommerce.RepositoryLayer.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,7 @@ using Microsoft.Extensions.Caching.Memory;
 namespace Ecommerce.Areas.Support.Controllers
 {
     [Area("Support")]
+    [Authorize(Policy = "Support Developer")]
     public class PathController : Controller
     {
         private readonly IUnitOfWork unitOfWork;

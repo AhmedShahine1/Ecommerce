@@ -64,6 +64,25 @@ namespace Ecommerce.BusinessLayer.AutoMapper
                 .ForMember(dest => dest.Language, opt => opt.MapFrom(src => src.Language))
                 .ForMember(dest => dest.CityId, opt => opt.MapFrom(src => src.CityId))
                 .ForMember(dest => dest.IsAdmin, opt => opt.MapFrom(src => true));
+            //--------------------------------------------------------------------------------------------------------
+            CreateMap<ApplicationUser, RegisterSupportDeveloper>()
+                .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FullName))
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+                .ForMember(dest => dest.PhoneNumber, opt => opt.MapFrom(src => src.PhoneNumber))
+                .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.Age))
+                .ForMember(dest => dest.Gender, opt => opt.MapFrom(src => src.Gender))
+                .ForMember(dest => dest.Language, opt => opt.MapFrom(src => src.Language))
+                .ForMember(dest => dest.CityId, opt => opt.MapFrom(src => src.CityId));
+
+            CreateMap<RegisterSupportDeveloper, ApplicationUser>()
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.Email))
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+                .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FullName))
+                .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.Age))
+                .ForMember(dest => dest.Gender, opt => opt.MapFrom(src => src.Gender))
+                .ForMember(dest => dest.Language, opt => opt.MapFrom(src => src.Language))
+                .ForMember(dest => dest.CityId, opt => opt.MapFrom(src => src.CityId))
+                .ForMember(dest => dest.IsAdmin, opt => opt.MapFrom(src => true));
         }
     }
 }

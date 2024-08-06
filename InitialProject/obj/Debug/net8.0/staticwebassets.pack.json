@@ -1,8 +1,16 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\ProfileImages\\0O7TL5Z26Y_UserIcon.jpg",
+      "PackagePath": "staticwebassets\\ProfileImages\\0O7TL5Z26Y_UserIcon.jpg"
+    },
+    {
       "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\ProfileImages\\HIKCVCOKQF_unnamed.png",
       "PackagePath": "staticwebassets\\ProfileImages\\HIKCVCOKQF_unnamed.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\ProfileImages\\SLB2BN73IO_UserIcon.jpg",
+      "PackagePath": "staticwebassets\\ProfileImages\\SLB2BN73IO_UserIcon.jpg"
     },
     {
       "Id": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\wwwroot\\ProfileImages\\user1-128x128.jpg",
