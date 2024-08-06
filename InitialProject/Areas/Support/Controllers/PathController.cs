@@ -98,7 +98,7 @@ namespace Ecommerce.Areas.Support.Controllers
                 ViewData["Title"] = "Edit Path";
                 var Path = (memoryCache.TryGetValue(CacheKey, out IEnumerable<Paths>? Paths)) ?
                     Paths?.FirstOrDefault(s => s.Id == id) :
-                    await unitOfWork.PathsRepository.FindByQuery(s => s.Id == id).FirstOrDefaultAsync();
+                    await unitOfWork.PathsRepository.GetByIdAsync(id);
                 return View(Path);
             }
             catch (Exception ex)
@@ -149,7 +149,7 @@ namespace Ecommerce.Areas.Support.Controllers
             {
                 var Path = (memoryCache.TryGetValue(CacheKey, out IEnumerable<Paths>? Paths)) ?
                     Paths?.FirstOrDefault(s => s.Id == id) :
-                    await unitOfWork.PathsRepository.FindByQuery(s => s.Id == id).FirstOrDefaultAsync();
+                    await unitOfWork.PathsRepository.GetByIdAsync(id);
                 unitOfWork.PathsRepository.Delete(Path);
                 await unitOfWork.SaveChangesAsync();
                 memoryCache.Remove(CacheKey); // Clear cache

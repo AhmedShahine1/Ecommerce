@@ -16,14 +16,6 @@ namespace Ecommerce.Core.DTO.AuthViewModel.RegisterModel
         [Required(ErrorMessage = "You should Enter Full Name"), StringLength(int.MaxValue)]
         public string FullName { get; set; }
 
-        [DisplayName("First Name")]
-        [Required(ErrorMessage = "You should Enter First Name"), StringLength(int.MaxValue)]
-        public string FirstName { get; set; }
-
-        [DisplayName("Last Name")]
-        [Required(ErrorMessage = "You should Enter Last Name"), StringLength(int.MaxValue)]
-        public string LastName { get; set; }
-
         [DisplayName("Email")]
         [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage = "You should Enter Email"), StringLength(int.MaxValue), EmailAddress]
@@ -47,6 +39,7 @@ namespace Ecommerce.Core.DTO.AuthViewModel.RegisterModel
 
         [DisplayName("Age")]
         [Required(ErrorMessage = "You should Enter Age")]
+        [Range(15, int.MaxValue)]
         public int Age { get; set; }
 
         [DisplayName("Gender")]
@@ -62,6 +55,6 @@ namespace Ecommerce.Core.DTO.AuthViewModel.RegisterModel
         public string CityId { get; set; }
 
         [DisplayName("Profile Image")]
-        public IList<IFormFile>? file { get; set; }
+        public IFormFile? ImageProfile { get; set; }
     }
 }

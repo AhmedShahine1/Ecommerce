@@ -1,7 +1,14 @@
 ﻿@model ErrorViewModel
 
-<div class="text-center">
-    <h1 class="display-4">An Error Occurred</h1>
-    <p class="lead">@Model.Message</p>
-    <p class="text-danger">@Model.StackTrace</p>
-</div>
+<section class="content">
+    <div class="error-page">
+        <h2 class="headline text-danger">@Model.StatusCode</h2>
+        <div class="error-content">
+            <h3><i class="fas fa-exclamation-triangle text-danger"></i> @Model.Message</h3>
+            <p>
+                @Model.StackTrace
+            </p>
+        </div>
+    </div>
+    <!-- /.error-page -->
+</section>

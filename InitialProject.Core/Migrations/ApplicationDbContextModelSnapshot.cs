@@ -127,6 +127,10 @@ namespace Ecommerce.Core.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("ProfileId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("RegistrationDate")
                         .HasColumnType("datetime2");
 
@@ -155,15 +159,14 @@ namespace Ecommerce.Core.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
+                    b.HasIndex("ProfileId");
+
                     b.ToTable("Users", "dbo");
                 });
 
             modelBuilder.Entity("Ecommerce.Core.Entity.Files.Images", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ApplicationUserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
@@ -175,8 +178,6 @@ namespace Ecommerce.Core.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ApplicationUserId");
 
                     b.HasIndex("pathId");
 
@@ -361,15 +362,19 @@ namespace Ecommerce.Core.Migrations
                         .WithMany("Users")
                         .HasForeignKey("CityId");
 
+                    b.HasOne("Ecommerce.Core.Entity.Files.Images", "Profile")
+                        .WithMany()
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("City");
+
+                    b.Navigation("Profile");
                 });
 
             modelBuilder.Entity("Ecommerce.Core.Entity.Files.Images", b =>
                 {
-                    b.HasOne("Ecommerce.Core.Entity.ApplicationData.ApplicationUser", null)
-                        .WithMany("Profile")
-                        .HasForeignKey("ApplicationUserId");
-
                     b.HasOne("Ecommerce.Core.Entity.Files.Paths", "path")
                         .WithMany("Images")
                         .HasForeignKey("pathId")
@@ -428,11 +433,6 @@ namespace Ecommerce.Core.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Ecommerce.Core.Entity.ApplicationData.ApplicationUser", b =>
-                {
-                    b.Navigation("Profile");
                 });
 
             modelBuilder.Entity("Ecommerce.Core.Entity.Files.Paths", b =>

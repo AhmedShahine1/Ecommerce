@@ -10,10 +10,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Ecommerce.Core.DTO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Ecommerce.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin,Support Developer")]
     public class CityController : Controller
     {
         private readonly IUnitOfWork unitOfWork;
@@ -102,7 +104,7 @@ namespace Ecommerce.Areas.Admin.Controllers
                 ViewData["Title"] = "Edit City";
                 var city = (memoryCache.TryGetValue(CacheKey, out IEnumerable<City>? Cities)) ?
                     Cities?.FirstOrDefault(s => s.Id == id) :
-                    await unitOfWork.CityRepository.FindByQuery(s => s.Id == id).FirstOrDefaultAsync();
+                    await unitOfWork.CityRepository.GetByIdAsync(id);
 
                 if (city == null)
                 {
@@ -160,7 +162,7 @@ namespace Ecommerce.Areas.Admin.Controllers
             {
                 var city = (memoryCache.TryGetValue(CacheKey, out IEnumerable<City>? Cities)) ? 
                     Cities?.FirstOrDefault(s => s.Id == id) :
-                    await unitOfWork.CityRepository.FindByQuery(s => s.Id == id).FirstOrDefaultAsync();
+                    await unitOfWork.CityRepository.GetByIdAsync(id);
                 if (city == null)
                 {
                     throw new Exception("City not found");

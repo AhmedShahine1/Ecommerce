@@ -1,18 +1,15 @@
-﻿using Ecommerce.Core;
-using Ecommerce.Core.Entity.ApplicationData;
+﻿using Ecommerce.Core.Entity.ApplicationData;
 using Ecommerce.Core.Helpers;
+using Ecommerce.Core;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace Ecommerce.Extensions;
-
 public static class IdentityServicesExtensions
 {
     public static IServiceCollection AddIdentityServices(this IServiceCollection services, IConfiguration config)
     {
-        // Identity service
         services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
         {
             options.Password.RequireNonAlphanumeric = false;
@@ -22,19 +19,15 @@ public static class IdentityServicesExtensions
             options.Password.RequiredLength = 6;
             options.User.RequireUniqueEmail = true;
         }).AddEntityFrameworkStores<ApplicationDbContext>()
-        .AddDefaultTokenProviders();
+          .AddDefaultTokenProviders();
 
-        //- JWT services
         services.Configure<Jwt>(config.GetSection("JWT"));
 
-        services.AddAuthentication(options =>
-        {
-            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-        }).AddJwtBearer(options =>
+        services.AddAuthentication()
+        .AddJwtBearer(options =>
         {
             options.RequireHttpsMetadata = false;
-            options.SaveToken = false;
+            options.SaveToken = true;
             options.TokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = true,
@@ -45,6 +38,16 @@ public static class IdentityServicesExtensions
                 ValidAudience = config["JWT:Audience"],
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JWT:Key"]))
             };
+        });
+        services.AddAuthorization(options =>
+        {
+            options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
+            options.AddPolicy("Support Developer", policy => policy.RequireRole("Support Developer"));
+            options.AddPolicy("Guest", policy => policy.RequireRole("Guest"));
+            options.AddPolicy("Support Staff", policy => policy.RequireRole("Support Staff"));
+            options.AddPolicy("Customer", policy => policy.RequireRole("Customer"));
+            options.AddPolicy("Vendor", policy => policy.RequireRole("Vendor"));
+            options.AddPolicy("Delivery Personnel", policy => policy.RequireRole("Delivery Personnel"));
         });
 
         return services;

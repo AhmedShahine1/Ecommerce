@@ -1,30 +1,28 @@
-﻿using Ecommerce.Core.DTO.AuthViewModel.RoleModel;
+﻿using Ecommerce.Core.DTO.AuthViewModel;
+using Ecommerce.Core.DTO.AuthViewModel.RegisterModel;
+using Ecommerce.Core.DTO.AuthViewModel.RoleModel;
+using Ecommerce.Core.Entity.ApplicationData;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Ecommerce.BusinessLayer.Interfaces;
 
 public interface IAccountService
 {
-    //Task<List<ApplicationUser>> GetAllUsers();
-    //Task<ApplicationUser> GetUserById(string userId);
-    //Task<ApplicationUser> GetUserByPhoneNumber(string phoneNumber);
-    //Task<ApplicationUser> GetUserByEmail(string email);
-    //Task<AuthModel> RegisterEcommerce(RegisterEcommerce model);
-    //Task<AuthModel> RegisterYouth(RegisterYouth model);
-    //Task<AuthModel> RegisterAdmin(RegisterAdmin model);
-    //Task<AuthModel> LoginAsync(LoginModel model);
-    //Task<bool> Logout(string userName);
-    //Task<AuthModel> ChangePasswordAsync(string userId, string password);
-    //Task<AuthModel> ChangeOldPasswordAsync(string userId, ChangeOldPassword changePassword);
-    //Task<AuthModel> UpdateUserProfile(string userId, UpdateUserMv updateUser);
-    //Task<AuthModel> GetUserInfo(string userId);
+    Task<ApplicationUser> GetUserById(string id);
+    Task<IdentityResult> RegisterAdmin(RegisterAdmin model);
+    Task<IdentityResult> UpdateAdmin(string adminId, RegisterAdmin model);
+    Task<(bool IsSuccess, string Token, string ErrorMessage)> Login(LoginModel model);
+    Task<bool> Logout(string token);
+    Task<IEnumerable<SelectListItem>> GetAllCitiesAsync();
     Task<string> AddRoleAsync(RoleUserModel model);
     Task<List<string>> GetRoles();
-
+    Task<string> GetUserProfileImage(string profileId);
     string ValidateJwtToken(string token);
     int GenerateRandomNo();
     ////------------------------------------------------------
-    //Task Activate(string userId);
-    //Task Suspend(string userId);
+    Task<IdentityResult> Activate(string userId);
+    Task<IdentityResult> Suspend(string userId);
     //string RandomString(int length);
     //Task<bool> DisActiveUserConnnection(string userId);
     //Task<bool> ActiveUserConnnection(string userId);

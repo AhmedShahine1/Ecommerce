@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7E85FA7C-F5FB-4B4F-9632-037C40157734}|InitialProject.BusinessLayer\\Ecommerce.BusinessLayer.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject.businesslayer\\interfaces\\ifilehandling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E85FA7C-F5FB-4B4F-9632-037C40157734}|InitialProject.BusinessLayer\\Ecommerce.BusinessLayer.csproj|solutionrelative:initialproject.businesslayer\\interfaces\\ifilehandling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|solutionrelative:initialproject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|solutionrelative:initialproject\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject\\controllers\\mvc\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|solutionrelative:initialproject\\controllers\\mvc\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E85FA7C-F5FB-4B4F-9632-037C40157734}|InitialProject.BusinessLayer\\Ecommerce.BusinessLayer.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject.businesslayer\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E85FA7C-F5FB-4B4F-9632-037C40157734}|InitialProject.BusinessLayer\\Ecommerce.BusinessLayer.csproj|solutionrelative:initialproject.businesslayer\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E85FA7C-F5FB-4B4F-9632-037C40157734}|InitialProject.BusinessLayer\\Ecommerce.BusinessLayer.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject.businesslayer\\services\\filehandling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,8 +29,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 122,
-          "SelectedChildIndex": 11,
+          "DockedWidth": 200,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,28 +78,63 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IFileHandling.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject.BusinessLayer\\Interfaces\\IFileHandling.cs",
-              "RelativeDocumentMoniker": "InitialProject.BusinessLayer\\Interfaces\\IFileHandling.cs",
-              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject.BusinessLayer\\Interfaces\\IFileHandling.cs",
-              "RelativeToolTip": "InitialProject.BusinessLayer\\Interfaces\\IFileHandling.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T00:35:12.529Z",
-              "EditorCaption": ""
+              "DocumentIndex": 1,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Views\\Auth\\Login.cshtml",
+              "RelativeDocumentMoniker": "InitialProject\\Views\\Auth\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Views\\Auth\\Login.cshtml",
+              "RelativeToolTip": "InitialProject\\Views\\Auth\\Login.cshtml",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAAAFMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-06T07:14:19.815Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Controllers\\MVC\\AuthController.cs",
+              "RelativeDocumentMoniker": "InitialProject\\Controllers\\MVC\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Controllers\\MVC\\AuthController.cs",
+              "RelativeToolTip": "InitialProject\\Controllers\\MVC\\AuthController.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAUwGsAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T07:01:13.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "FileHandling.cs",
               "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject.BusinessLayer\\Services\\FileHandling.cs",
               "RelativeDocumentMoniker": "InitialProject.BusinessLayer\\Services\\FileHandling.cs",
               "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject.BusinessLayer\\Services\\FileHandling.cs",
               "RelativeToolTip": "InitialProject.BusinessLayer\\Services\\FileHandling.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAuwEoAAAAHAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAF0AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T00:30:08.761Z",
+              "WhenOpened": "2024-08-05T03:47:35.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject.BusinessLayer\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "InitialProject.BusinessLayer\\Services\\AccountService.cs",
+              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject.BusinessLayer\\Services\\AccountService.cs",
+              "RelativeToolTip": "InitialProject.BusinessLayer\\Services\\AccountService.cs",
+              "ViewState": "AQIAAJoAAAAAAAAAAAAkwBgBAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T03:47:15.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "InitialProject\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "InitialProject\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAFwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-03T15:22:08.095Z",
               "EditorCaption": ""
             }
           ]

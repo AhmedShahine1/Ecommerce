@@ -54,7 +54,29 @@ namespace Ecommerce.BusinessLayer.Services
                 File.Delete(Path.Combine(webHostEnvironment.WebRootPath, oldFilePath));
             }
 
-            return Path.Combine(paths.Name, uniqueFileName);
+            return image.Id;
+        }
+
+        public async Task<string> DefaultProfile(Paths paths)
+        {
+            var uploads = Path.Combine(webHostEnvironment.WebRootPath, paths.Name);
+            var sourcePath = Path.Combine(webHostEnvironment.WebRootPath, "asset", "user.jpg");
+            if (!Directory.Exists(uploads))
+            {
+                Directory.CreateDirectory(uploads);
+            }
+            var uniqueFileName = $"{RandomString(10)}_UserIcon";
+            var destinationPath = Path.Combine(uploads, uniqueFileName);
+            File.Copy(sourcePath, destinationPath, true);
+            var image = new Images
+            {
+                Name = uniqueFileName,
+                pathId = paths.Id,
+                path = paths
+            };
+            await unitOfWork.ImagesRepository.AddAsync(image);
+            await unitOfWork.SaveChangesAsync();
+            return image.Id;
         }
 
         public async Task<string> GetFile(string imageId)
@@ -69,7 +91,7 @@ namespace Ecommerce.BusinessLayer.Services
                 throw new FileNotFoundException("Image not found.");
             }
 
-            return Path.Combine(webHostEnvironment.WebRootPath, $"{image.path.Name}/{image.Name}");
+            return Path.Combine($"/{image.path.Name}/{image.Name}");
         }
 
         public async Task<string> UpdateFile(IFormFile file, Paths paths, string imageId)
@@ -111,7 +133,7 @@ namespace Ecommerce.BusinessLayer.Services
                 File.Delete(oldFilePath);
             }
 
-            return Path.Combine(paths.Name, uniqueFileName);
+            return image.Id;
         }
 
         private static string RandomString(int length)

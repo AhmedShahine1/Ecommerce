@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Ecommerce.Core.DTO.AuthViewModel.CityModel;
 using Ecommerce.Core.DTO.AuthViewModel.FilesModel;
+using Ecommerce.Core.DTO.AuthViewModel.RegisterModel;
 using Ecommerce.Core.DTO.AuthViewModel.RoleModel;
 using Ecommerce.Core.Entity.ApplicationData;
 using Ecommerce.Core.Entity.Files;
@@ -44,6 +45,25 @@ namespace Ecommerce.BusinessLayer.AutoMapper
                 .ForMember(a => a.NameAr, s => s.MapFrom(b => b.NameAr))
                 .ForMember(a => a.CountryAr, s => s.MapFrom(b => b.CountryAr))
                 .ForMember(a => a.CountryEn, s => s.MapFrom(b => b.CountryEn));
+            //--------------------------------------------------------------------------------------------------------
+            CreateMap<ApplicationUser, RegisterAdmin>()
+                .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FullName))
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+                .ForMember(dest => dest.PhoneNumber, opt => opt.MapFrom(src => src.PhoneNumber))
+                .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.Age))
+                .ForMember(dest => dest.Gender, opt => opt.MapFrom(src => src.Gender))
+                .ForMember(dest => dest.Language, opt => opt.MapFrom(src => src.Language))
+                .ForMember(dest => dest.CityId, opt => opt.MapFrom(src => src.CityId));
+
+            CreateMap<RegisterAdmin, ApplicationUser>()
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.Email))
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+                .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FullName))
+                .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.Age))
+                .ForMember(dest => dest.Gender, opt => opt.MapFrom(src => src.Gender))
+                .ForMember(dest => dest.Language, opt => opt.MapFrom(src => src.Language))
+                .ForMember(dest => dest.CityId, opt => opt.MapFrom(src => src.CityId))
+                .ForMember(dest => dest.IsAdmin, opt => opt.MapFrom(src => true));
         }
     }
 }
