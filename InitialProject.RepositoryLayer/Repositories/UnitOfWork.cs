@@ -2,6 +2,7 @@
 using Ecommerce.Core.Entity.ApplicationData;
 using Ecommerce.Core.Entity.Files;
 using Ecommerce.Core.Entity.Others;
+using Ecommerce.Core.Entity.Vendor;
 using Ecommerce.RepositoryLayer.Interfaces;
 
 namespace Ecommerce.RepositoryLayer.Repositories;
@@ -17,12 +18,16 @@ public class UnitOfWork : IUnitOfWork
     public IBaseRepository<City> CityRepository { get; set; }
     public IBaseRepository<Images> ImagesRepository { get; set; }
 
+    public IBaseRepository<Category> CategoryRepository { get; set; }
+
     public UnitOfWork(ApplicationDbContext context)
     {
         _context = context;
         PathsRepository = new BaseRepository<Paths>(context);
         ImagesRepository = new BaseRepository<Images>(context);
         CityRepository = new BaseRepository<City>(context);
+        CategoryRepository = new BaseRepository<Category>(context);
+
     }
 
     public int SaveChanges()

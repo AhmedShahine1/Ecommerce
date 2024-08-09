@@ -1,81 +1,97 @@
 ﻿@model IEnumerable<City>
 
-<form>
-    <button type="submit" class="btn btn-primary p-2" asp-action="Create">Create New</button>
-</form>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NameAr)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NameEn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CountryEn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CountryAr)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsShow)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UpdatedAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeletedAt)
-            </th>
-            <th>
-                Edit
-            </th>
-            <th>
-                Delete
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NameAr)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NameEn)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CountryEn)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CountryAr)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsShow)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedAt)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UpdatedAt)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DeletedAt)
-                </td>
-                <td>
-                    <form class="p-2">
-                        <button type="submit" class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</button>
-                    </form>
-                </td>
-                <td>
-                    <form class="p-2" asp-action="Delete" asp-route-id="@item.Id">
-                        <input type="submit" value="Delete" class="btn btn-primary" />
-                    </form>
-            </tr>
-        }
-    </tbody>
-</table>
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">City</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>@Html.DisplayNameFor(model => model.NameAr)</th>
+                                    <th>@Html.DisplayNameFor(model => model.NameEn)</th>
+                                    <th>@Html.DisplayNameFor(model => model.CountryEn)</th>
+                                    <th>@Html.DisplayNameFor(model => model.CountryAr)</th>
+                                    <th>@Html.DisplayNameFor(model => model.IsShow)</th>
+                                    <th>@Html.DisplayNameFor(model => model.CreatedAt)</th>
+                                    <th>@Html.DisplayNameFor(model => model.UpdatedAt)</th>
+                                    <th>@Html.DisplayNameFor(model => model.DeletedAt)</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(modelItem => item.NameAr)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.NameEn)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.CountryEn)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.CountryAr)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.IsShow)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.CreatedAt)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.UpdatedAt)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.DeletedAt)</td>
+                                        <td>
+                                            <form class="p-2">
+                                                <button type="submit" class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</button>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form class="p-2" asp-action="Delete" asp-route-id="@item.Id">
+                                                <input type="submit" value="Delete" class="btn btn-primary" />
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>@Html.DisplayNameFor(model => model.NameAr)</th>
+                                    <th>@Html.DisplayNameFor(model => model.NameEn)</th>
+                                    <th>@Html.DisplayNameFor(model => model.CountryEn)</th>
+                                    <th>@Html.DisplayNameFor(model => model.CountryAr)</th>
+                                    <th>@Html.DisplayNameFor(model => model.IsShow)</th>
+                                    <th>@Html.DisplayNameFor(model => model.CreatedAt)</th>
+                                    <th>@Html.DisplayNameFor(model => model.UpdatedAt)</th>
+                                    <th>@Html.DisplayNameFor(model => model.DeletedAt)</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#example1").DataTable({
+                pagingType: 'full_numbers',
+                jQueryUI:true,
+                "lengthChange": true,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+                "responsive": true,
+                "buttons": ["copy", "excel", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        });
+    </script>
+}

@@ -2,7 +2,8 @@
 @using Ecommerce.Core.DTO.AuthViewModel
 @using Ecommerce.Core.Helpers
 @using Ecommerce.Core.DTO
-
+@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }

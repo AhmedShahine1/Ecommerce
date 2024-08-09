@@ -3,44 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject\\areas\\admin\\controllers\\citycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|solutionrelative:initialproject\\areas\\admin\\controllers\\citycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject\\areas\\admin\\views\\category\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|solutionrelative:initialproject\\areas\\admin\\views\\category\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject\\areas\\admin\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|solutionrelative:initialproject\\areas\\admin\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject\\areas\\admin\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|solutionrelative:initialproject\\areas\\admin\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject\\areas\\support\\controllers\\supportdevelopercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|solutionrelative:initialproject\\areas\\support\\controllers\\supportdevelopercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject\\areas\\support\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|solutionrelative:initialproject\\areas\\support\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject\\areas\\support\\controllers\\requestresponseviewercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|solutionrelative:initialproject\\areas\\support\\controllers\\requestresponseviewercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject\\areas\\support\\controllers\\pathcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|solutionrelative:initialproject\\areas\\support\\controllers\\pathcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A2E85D9-0DA2-48AA-BDBF-B7704F7D71D6}|InitialProject.Core\\Ecommerce.Core.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject.core\\dto\\authviewmodel\\registermodel\\registersupportdeveloper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A2E85D9-0DA2-48AA-BDBF-B7704F7D71D6}|InitialProject.Core\\Ecommerce.Core.csproj|solutionrelative:initialproject.core\\dto\\authviewmodel\\registermodel\\registersupportdeveloper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E85FA7C-F5FB-4B4F-9632-037C40157734}|InitialProject.BusinessLayer\\Ecommerce.BusinessLayer.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject.businesslayer\\automapper\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E85FA7C-F5FB-4B4F-9632-037C40157734}|InitialProject.BusinessLayer\\Ecommerce.BusinessLayer.csproj|solutionrelative:initialproject.businesslayer\\automapper\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E85FA7C-F5FB-4B4F-9632-037C40157734}|InitialProject.BusinessLayer\\Ecommerce.BusinessLayer.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject.businesslayer\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E85FA7C-F5FB-4B4F-9632-037C40157734}|InitialProject.BusinessLayer\\Ecommerce.BusinessLayer.csproj|solutionrelative:initialproject.businesslayer\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E85FA7C-F5FB-4B4F-9632-037C40157734}|InitialProject.BusinessLayer\\Ecommerce.BusinessLayer.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject.businesslayer\\interfaces\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E85FA7C-F5FB-4B4F-9632-037C40157734}|InitialProject.BusinessLayer\\Ecommerce.BusinessLayer.csproj|solutionrelative:initialproject.businesslayer\\interfaces\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|c:\\users\\ahmed\\documents\\m.a\\work\\ecommerce\\initialproject\\areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7AEE70E6-CF20-4AA0-8D7B-96346603A9FC}|InitialProject\\Ecommerce.csproj|solutionrelative:initialproject\\areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,132 +70,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CityController.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Admin\\Controllers\\CityController.cs",
-              "RelativeDocumentMoniker": "InitialProject\\Areas\\Admin\\Controllers\\CityController.cs",
-              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Admin\\Controllers\\CityController.cs",
-              "RelativeToolTip": "InitialProject\\Areas\\Admin\\Controllers\\CityController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T20:10:52.654Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Admin\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "InitialProject\\Areas\\Admin\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Admin\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "InitialProject\\Areas\\Admin\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T19:54:13.864Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RoleController.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Support\\Controllers\\RoleController.cs",
-              "RelativeDocumentMoniker": "InitialProject\\Areas\\Support\\Controllers\\RoleController.cs",
-              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Support\\Controllers\\RoleController.cs",
-              "RelativeToolTip": "InitialProject\\Areas\\Support\\Controllers\\RoleController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T20:10:38.443Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RequestResponseViewerController.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Support\\Controllers\\RequestResponseViewerController.cs",
-              "RelativeDocumentMoniker": "InitialProject\\Areas\\Support\\Controllers\\RequestResponseViewerController.cs",
-              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Support\\Controllers\\RequestResponseViewerController.cs",
-              "RelativeToolTip": "InitialProject\\Areas\\Support\\Controllers\\RequestResponseViewerController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T20:10:33.745Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PathController.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Support\\Controllers\\PathController.cs",
-              "RelativeDocumentMoniker": "InitialProject\\Areas\\Support\\Controllers\\PathController.cs",
-              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Support\\Controllers\\PathController.cs",
-              "RelativeToolTip": "InitialProject\\Areas\\Support\\Controllers\\PathController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T20:10:28.313Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject.BusinessLayer\\AutoMapper\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "InitialProject.BusinessLayer\\AutoMapper\\MappingProfile.cs",
-              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject.BusinessLayer\\AutoMapper\\MappingProfile.cs",
-              "RelativeToolTip": "InitialProject.BusinessLayer\\AutoMapper\\MappingProfile.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAAAiwEwAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T20:03:49.109Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AccountService.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject.BusinessLayer\\Services\\AccountService.cs",
-              "RelativeDocumentMoniker": "InitialProject.BusinessLayer\\Services\\AccountService.cs",
-              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject.BusinessLayer\\Services\\AccountService.cs",
-              "RelativeToolTip": "InitialProject.BusinessLayer\\Services\\AccountService.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAwF0AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T19:46:28.205Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IAccountService.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject.BusinessLayer\\Interfaces\\IAccountService.cs",
-              "RelativeDocumentMoniker": "InitialProject.BusinessLayer\\Interfaces\\IAccountService.cs",
-              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject.BusinessLayer\\Interfaces\\IAccountService.cs",
-              "RelativeToolTip": "InitialProject.BusinessLayer\\Interfaces\\IAccountService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T19:45:17.051Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RegisterSupportDeveloper.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject.Core\\DTO\\AuthViewModel\\RegisterModel\\RegisterSupportDeveloper.cs",
-              "RelativeDocumentMoniker": "InitialProject.Core\\DTO\\AuthViewModel\\RegisterModel\\RegisterSupportDeveloper.cs",
-              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject.Core\\DTO\\AuthViewModel\\RegisterModel\\RegisterSupportDeveloper.cs",
-              "RelativeToolTip": "InitialProject.Core\\DTO\\AuthViewModel\\RegisterModel\\RegisterSupportDeveloper.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T19:42:07.295Z",
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Admin\\Views\\Category\\Create.cshtml",
+              "RelativeDocumentMoniker": "InitialProject\\Areas\\Admin\\Views\\Category\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Admin\\Views\\Category\\Create.cshtml",
+              "RelativeToolTip": "InitialProject\\Areas\\Admin\\Views\\Category\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-09T04:57:26.066Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SupportDeveloperController.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Support\\Controllers\\SupportDeveloperController.cs",
-              "RelativeDocumentMoniker": "InitialProject\\Areas\\Support\\Controllers\\SupportDeveloperController.cs",
-              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Support\\Controllers\\SupportDeveloperController.cs",
-              "RelativeToolTip": "InitialProject\\Areas\\Support\\Controllers\\SupportDeveloperController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T19:41:20.662Z",
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "InitialProject\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "InitialProject\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-09T04:56:50.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Admin\\Views\\Category\\Edit.cshtml",
+              "RelativeDocumentMoniker": "InitialProject\\Areas\\Admin\\Views\\Category\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Ahmed\\Documents\\M.A\\work\\Ecommerce\\InitialProject\\Areas\\Admin\\Views\\Category\\Edit.cshtml",
+              "RelativeToolTip": "InitialProject\\Areas\\Admin\\Views\\Category\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-09T04:55:53.079Z",
               "EditorCaption": ""
             }
           ]

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VersoCode | @ViewData["Title"]</title>
 
+    <link rel="icon" type="image/x-icon" href="~/VersoCode.ico">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -13,6 +14,12 @@
     <link href="~/lib/overlayscrollbars/styles/overlayscrollbars.min.css" rel="stylesheet" />
     <!-- Theme style -->
     <link href="~/lib/admin-lte/css/adminlte.min.css" rel="stylesheet" />
+    <!-- DataTables -->
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link href="~/lib/datatables.net-bs4/datatables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="~/lib/datatables.net-responsive-bs4/responsive.bootstrap4.min.css" rel="stylesheet" />
+    <link href="~/lib/datatables.net-buttons-bs4/buttons.bootstrap4.min.css" rel="stylesheet" />
+    @RenderSection("Styles", required: false)
 </head>
 <body class="hold-transition sidebar-mini">
     @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
@@ -97,60 +104,171 @@
                 <img src="~/asset/VersoCode.jpg" alt="VersoCode Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">VersoCode</span>
             </a>
-
+            @{
+                var isAdmin = (await AuthorizationService.AuthorizeAsync(User, "Admin")).Succeeded;
+                var isSupportDeveloper = (await AuthorizationService.AuthorizeAsync(User, "Support Developer")).Succeeded;
+                var isCustomer = (await AuthorizationService.AuthorizeAsync(User, "Customer")).Succeeded;
+                var isVendor = (await AuthorizationService.AuthorizeAsync(User, "Vendor")).Succeeded;
+                var isGuest = (await AuthorizationService.AuthorizeAsync(User, "Guest")).Succeeded;
+                var isSupportStaff = (await AuthorizationService.AuthorizeAsync(User, "Support Staff")).Succeeded;
+                var isDeliveryPersonnel = (await AuthorizationService.AuthorizeAsync(User, "Delivery Personnel")).Succeeded;
+            }
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Paths -->
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-link"></i>
-                                <p>
-                                    Paths
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a asp-area="Support" asp-controller="Path" asp-action="Index" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>All Paths</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a asp-area="Support" asp-controller="Path" asp-action="Create" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add Path</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- Roles -->
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-users-cog"></i>
-                                <p>
-                                    Roles
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a asp-area="Support" asp-controller="Role" asp-action="Index" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>All Roles</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a asp-area="Support" asp-controller="Role" asp-action="Create" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add Role</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        @if (isAdmin)
+                        {
+                            <!-- Category Tree -->
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>
+                                        Category
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a asp-area="Admin" asp-controller="Category" asp-action="Index" class="nav-link">
+                                            <i class="far fa-dot-circle nav-icon"></i>
+                                            <p>All Categories</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-area="Admin" asp-controller="Category" asp-action="Create" class="nav-link">
+                                            <i class="far fa-dot-circle nav-icon"></i>
+                                            <p>Add Category</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!-- City Tree -->
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>
+                                        City
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a asp-area="Admin" asp-controller="City" asp-action="Index" class="nav-link">
+                                            <i class="far fa-dot-circle nav-icon"></i>
+                                            <p>All Cities</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-area="Admin" asp-controller="City" asp-action="Create" class="nav-link">
+                                            <i class="far fa-dot-circle nav-icon"></i>
+                                            <p>Add City</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!-- Admin Tree -->
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>
+                                        Admin
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a asp-area="Admin" asp-controller="Admin" asp-action="Register" class="nav-link">
+                                            <i class="far fa-dot-circle nav-icon"></i>
+                                            <p>Register Admin</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+
+                        @if (isSupportDeveloper)
+                        {
+                            <!-- Request/Response Viewer -->
+                            <li class="nav-item">
+                                <a asp-area="Support" asp-controller="RequestResponseViewer" asp-action="Index" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Request/Response Viewer</p>
+                                </a>
+                            </li>
+
+                            <!-- Role Tree -->
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>
+                                        Role
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a asp-area="Support" asp-controller="Role" asp-action="Index" class="nav-link">
+                                            <i class="far fa-dot-circle nav-icon"></i>
+                                            <p>All Roles</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-area="Support" asp-controller="Role" asp-action="Create" class="nav-link">
+                                            <i class="far fa-dot-circle nav-icon"></i>
+                                            <p>Add Role</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!-- Path Tree -->
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>
+                                        Path
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a asp-area="Support" asp-controller="Path" asp-action="Index" class="nav-link">
+                                            <i class="far fa-dot-circle nav-icon"></i>
+                                            <p>All Paths</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-area="Support" asp-controller="Path" asp-action="Create" class="nav-link">
+                                            <i class="far fa-dot-circle nav-icon"></i>
+                                            <p>Add Path</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!-- Support Developer -->
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>
+                                        Support Developer
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a asp-area="Support" asp-controller="SupportDeveloper" asp-action="Register" class="nav-link">
+                                            <i class="far fa-dot-circle nav-icon"></i>
+                                            <p>Register Support Developer</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -183,14 +301,6 @@
                 <div class="card">
                     <div class="card-header">
                         <h1 class="card-title">@ViewData["Title"]</h1>
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
                     </div>
                     <div class="card-body">
                         @RenderBody()
@@ -233,5 +343,19 @@
     <script src="~/lib/admin-lte/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="~/lib/admin-lte/js/demo.js"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="~/lib/datatables.net/datatables.min.js"></script>
+    <script src="~/lib/datatables.net-bs4/datatables.bootstrap4.min.js"></script>
+    <script src="~/lib/datatables.net-responsive/datatables.responsive.min.js"></script>
+    <script src="~/lib/datatables.net-responsive-bs4/responsive.bootstrap4.min.js"></script>
+    <script src="~/lib/datatables.net-buttons/js/datatables.buttons.min.js"></script>
+    <script src="~/lib/datatables.net-buttons-bs4/buttons.bootstrap4.min.js"></script>
+    <script src="~/lib/jszip/jszip.min.js"></script>
+    <script src="~/lib/pdfmake/pdfmake.min.js"></script>
+    <script src="~/lib/pdfmake/vfs_fonts.js"></script>
+    <script src="~/lib/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/lib/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="~/lib/datatables.net-buttons/js/buttons.colvis.min.js"></script>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

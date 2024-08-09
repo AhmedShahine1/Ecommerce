@@ -1,6 +1,7 @@
 ﻿using Ecommerce.Core.Entity.ApplicationData;
 using Ecommerce.Core.Entity.Files;
 using Ecommerce.Core.Entity.Others;
+using Ecommerce.Core.Entity.Vendor;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +17,8 @@ namespace Ecommerce.Core
         //----------------------------------------------------------------------------------
         public virtual DbSet<City> Cities { get; set; }
 
+        //----------------------------------------------------------------------------------
+        public virtual DbSet<Category> Categories { get; set; }
         //----------------------------------------------------------------------------------
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {

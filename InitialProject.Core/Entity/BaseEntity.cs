@@ -5,6 +5,7 @@ namespace Ecommerce.Core.Entity
 {
     public class BaseEntity
     {
+        [Key]
         public string Id { get; set; } = Guid.NewGuid().ToString();
 
         [Display(Name = "تاريخ الإنشاء")]
